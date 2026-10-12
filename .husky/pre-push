@@ -1,1 +1,1 @@
-pnpm build
+corepack pnpm build || pnpm build
