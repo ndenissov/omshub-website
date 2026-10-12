@@ -44,11 +44,10 @@ import {
   IconFlag,
 } from '@tabler/icons-react';
 import { useAuth } from '@/context/AuthContext';
-import { useMenu } from '@/context/MenuContext';
 import { GT_COLORS } from '@/lib/theme';
 
 const navLinks = [
-  { label: 'Recents', href: '/recents', icon: IconClock },
+  { label: 'Recents', href: 'https://www.omshub.org/recents', icon: IconClock },
   { label: 'Schedule', href: '/schedule', icon: IconCalendar },
   { label: 'About', href: '/about', icon: IconInfoCircle },
 ];
@@ -79,8 +78,6 @@ export function NavBarMantine() {
   // Helper to get user display values from Supabase user metadata
   const displayName = user?.user_metadata?.full_name || user?.email?.split('@')[0] || 'User';
   const photoURL = user?.user_metadata?.avatar_url || null;
-
-  const { handleLoginOpen } = useMenu();
 
   return (
     <Box
@@ -115,29 +112,54 @@ export function NavBarMantine() {
 
             {/* Desktop Navigation */}
             <Group gap={4} visibleFrom="md">
-              {navLinks.map((link) => (
-                <Button
-                  key={link.href}
-                  component={Link}
-                  href={link.href}
-                  prefetch={false}
-                  variant="subtle"
-                  size="sm"
-                  fw={500}
-                  leftSection={<link.icon size={16} />}
-                  styles={{
-                    root: {
-                      color: 'rgba(255,255,255,0.85)',
-                      '&:hover': {
-                        backgroundColor: 'rgba(255,255,255,0.1)',
-                        color: 'white',
+              {navLinks.map((link) =>
+                link.href.startsWith('http') ? (
+                  <Button
+                    key={link.href}
+                    component="a"
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="subtle"
+                    size="sm"
+                    fw={500}
+                    leftSection={<link.icon size={16} />}
+                    styles={{
+                      root: {
+                        color: 'rgba(255,255,255,0.85)',
+                        '&:hover': {
+                          backgroundColor: 'rgba(255,255,255,0.1)',
+                          color: 'white',
+                        },
                       },
-                    },
-                  }}
-                >
-                  {link.label}
-                </Button>
-              ))}
+                    }}
+                  >
+                    {link.label}
+                  </Button>
+                ) : (
+                  <Button
+                    key={link.href}
+                    component={Link}
+                    href={link.href}
+                    prefetch={false}
+                    variant="subtle"
+                    size="sm"
+                    fw={500}
+                    leftSection={<link.icon size={16} />}
+                    styles={{
+                      root: {
+                        color: 'rgba(255,255,255,0.85)',
+                        '&:hover': {
+                          backgroundColor: 'rgba(255,255,255,0.1)',
+                          color: 'white',
+                        },
+                      },
+                    }}
+                  >
+                    {link.label}
+                  </Button>
+                )
+              )}
             </Group>
           </Group>
 
@@ -291,7 +313,10 @@ export function NavBarMantine() {
                   <Button
                     variant="filled"
                     size="sm"
-                    onClick={handleLoginOpen}
+                    component="a"
+                    href="https://www.omshub.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     leftSection={<IconUser size={16} />}
                     styles={{
                       root: {
@@ -413,23 +438,42 @@ export function NavBarMantine() {
           <Divider />
 
           {/* Navigation Links */}
-          {navLinks.map((link) => (
-            <Button
-              key={link.href}
-              component={Link}
-              href={link.href}
-              prefetch={false}
-              variant="subtle"
-              color="gray"
-              fullWidth
-              justify="flex-start"
-              size="md"
-              leftSection={<link.icon size={18} />}
-              onClick={closeDrawer}
-            >
-              {link.label}
-            </Button>
-          ))}
+          {navLinks.map((link) =>
+            link.href.startsWith('http') ? (
+              <Button
+                key={link.href}
+                component="a"
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="subtle"
+                color="gray"
+                fullWidth
+                justify="flex-start"
+                size="md"
+                leftSection={<link.icon size={18} />}
+                onClick={closeDrawer}
+              >
+                {link.label}
+              </Button>
+            ) : (
+              <Button
+                key={link.href}
+                component={Link}
+                href={link.href}
+                prefetch={false}
+                variant="subtle"
+                color="gray"
+                fullWidth
+                justify="flex-start"
+                size="md"
+                leftSection={<link.icon size={18} />}
+                onClick={closeDrawer}
+              >
+                {link.label}
+              </Button>
+            )
+          )}
 
           <Divider />
 
@@ -551,7 +595,10 @@ export function NavBarMantine() {
             <Button
               variant="filled"
               size="md"
-              onClick={() => { handleLoginOpen(); closeDrawer(); }}
+              component="a"
+              href="https://www.omshub.org"
+              target="_blank"
+              rel="noopener noreferrer"
               leftSection={<IconUser size={18} />}
               style={{
                 backgroundColor: GT_COLORS.techGold,

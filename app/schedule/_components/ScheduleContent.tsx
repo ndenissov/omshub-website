@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useMemo, useRef } from 'react';
-import Link from 'next/link';
 import {
   Container,
   Title,
@@ -746,7 +745,7 @@ export default function ScheduleContent({ allCourseData = {} }: ScheduleContentP
     else if (value >= 3) { textColor = '#0d6650'; iconColor = 'var(--mantine-color-teal-filled)'; }
     return (
       <Tooltip label={numReviews ? `${numReviews} reviews` : 'No reviews'}>
-        <Anchor component={Link} href={`/course/${courseId}`} style={{ textDecoration: 'none' }}>
+        <Anchor href={`https://www.omshub.org/course/${courseId}`} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
           <Group gap={4} justify="center" wrap="nowrap">
             <IconStar size={14} fill={iconColor} color={iconColor} />
             <Text size="sm" fw={600} style={{ color: textColor }}>{value.toFixed(1)}</Text>

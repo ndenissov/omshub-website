@@ -40,7 +40,7 @@ describe('CoursesTable', () => {
     expect(source).toContain('onClick={clearSavedTableSettings}');
   });
 
-  it('does not prefetch every linked course row', () => {
-    expect(source).toContain('prefetch={false}');
+  it('links courses to omshub.org in a new tab', () => {
+    expect(source).toContain('https://www.omshub.org/course/');
   });
 });

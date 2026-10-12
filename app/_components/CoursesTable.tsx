@@ -1,7 +1,6 @@
 'use client';
 
 import { useMemo } from 'react';
-import Link from 'next/link';
 import { Course, TCourseId } from '@/lib/types';
 import {
   Button,
@@ -308,9 +307,9 @@ export default function CoursesTable({ allCourseData }: CoursesTableProps) {
                   <Table.Td style={{ minWidth: 200, maxWidth: 280 }}>
                     <Stack gap={2}>
                       <Anchor
-                        component={Link}
-                        href={`/course/${course.courseId}`}
-                        prefetch={false}
+                        href={`https://www.omshub.org/course/${course.courseId}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         fw={500}
                         size="sm"
                         style={{ color: GT_COLORS.boldBlue }}

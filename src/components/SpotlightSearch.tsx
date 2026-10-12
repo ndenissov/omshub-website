@@ -75,7 +75,7 @@ export const formatSpotlightRating = (value: number | null | undefined): string 
 
 export const buildSpotlightActions = (
   simpleCourses: SimpleCourse[],
-  router: ReturnType<typeof useRouter>
+  _router: ReturnType<typeof useRouter>
 ) => {
   if (simpleCourses.length === 0) return [];
 
@@ -152,7 +152,7 @@ export const buildSpotlightActions = (
         id: course.courseId,
         label: course.name,
         description,
-        onClick: () => router.push(`/course/${course.courseId}`),
+        onClick: () => window.open(`https://www.omshub.org/course/${course.courseId}`, '_blank'),
         keywords,
       };
     })

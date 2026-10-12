@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 // Image metadata
+export const dynamic = 'force-static';
 export const alt = 'OMSHub - Georgia Tech OMS Course Reviews';
 export const size = {
   width: 1200,

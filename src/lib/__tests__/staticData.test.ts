@@ -29,8 +29,7 @@ describe('static data fetchers', () => {
       'CS-6200': { name: 'GIOS' },
     });
     expect(fetchMock).toHaveBeenCalledWith(
-      'https://raw.githubusercontent.com/omshub/data/main/static/courses.json',
-      { cache: 'no-store' }
+      'https://raw.githubusercontent.com/omshub/data/main/static/courses.json'
     );
   });
 

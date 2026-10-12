@@ -4,19 +4,8 @@ import { courseFields } from '@/lib/constants';
 import { mapPayloadToArray } from '@/utilities';
 import HeroSection from './_components/HeroSection';
 import LazyCoursesTable from './_components/LazyCoursesTable';
-import AuthErrorNotification from './_components/AuthErrorNotification';
 
-export default async function HomePage({
-  searchParams,
-}: {
-  searchParams: Promise<{
-    error?: string;
-    error_description?: string;
-    reason?: string;
-    message?: string;
-  }>;
-}) {
-  const { error, error_description, reason, message } = await searchParams;
+export default async function HomePage() {
   const [coursesDataDynamic, coursesDataStatic, globalStats] = await Promise.all([
     getCourseStats(),
     getCoursesDataStatic(),
@@ -46,14 +35,6 @@ export default async function HomePage({
 
   return (
     <>
-      {error && (
-        <AuthErrorNotification
-          error={error}
-          errorDescription={error_description}
-          reason={reason}
-          message={message}
-        />
-      )}
       {/* Hero renders immediately on server - no JS required */}
       <HeroSection stats={stats} />
 

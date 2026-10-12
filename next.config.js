@@ -2,34 +2,10 @@
 
 module.exports = {
   reactStrictMode: true,
+  output: 'export',
+  trailingSlash: true,
+  basePath: process.env.BASE_PATH !== undefined ? process.env.BASE_PATH : '/omshub-website',
 
-  // Allow Clarity bot to access assets for session replay
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-        ],
-      },
-      {
-        source: '/_next/static/:path*',
-        headers: [
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-    ];
-  },
   // Disable source maps in production for better performance
   productionBrowserSourceMaps: false,
 
@@ -57,10 +33,7 @@ module.exports = {
 
   // Image optimization settings
   images: {
-    formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256],
-    minimumCacheTTL: 31536000, // 1 year cache
+    unoptimized: true,
   },
 
   // Experimental features for performance

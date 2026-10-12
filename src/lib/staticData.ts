@@ -5,7 +5,7 @@ const DATA_REPO_BASE =
 
 async function fetchStaticData<T>(filename: string): Promise<T> {
   const url = `${DATA_REPO_BASE}/${filename}`;
-  const res = await fetch(url, { cache: 'no-store' });
+  const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`Failed to fetch ${filename}: ${res.status}`);
   }

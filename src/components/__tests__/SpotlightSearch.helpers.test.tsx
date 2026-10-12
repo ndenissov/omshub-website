@@ -95,8 +95,10 @@ describe('SpotlightSearch helpers', () => {
     expect(formatSpotlightRating(3.25)).toBe('3.3');
     expect(actions.map((action) => action.id)).toEqual(['CS-6200', 'CS-6300', 'CS-6400']);
 
+    const openSpy = jest.spyOn(window, 'open').mockImplementation(() => null);
     actions[0].onClick();
-    expect(push).toHaveBeenCalledWith('/course/CS-6200');
+    expect(openSpy).toHaveBeenCalledWith('https://www.omshub.org/course/CS-6200', '_blank');
+    openSpy.mockRestore();
     expect(buildSpotlightActions([], { push } as any)).toEqual([]);
   });
 
