@@ -1,0 +1,19 @@
+# OMSHub (omshub.xyz)
+
+> OMSHub is an open-source, community-driven course planning platform and schedule analyzer for Georgia Tech Online Master's programs (OMSCS, OMSA, OMSCyber).
+
+## Available Documents & Markdown Endpoints
+
+- [Course Catalog & Ratings](https://omshub.xyz/courses.md): Markdown table of all 130 OMS courses with difficulty, workload hours per week, overall student ratings, and foundational course designations.
+- [Current Course Schedule](https://omshub.xyz/schedule.md): Markdown table of current semester courses (Spring 2027), available seats, waitlists, instructors, CRNs, and linked difficulty metrics.
+- [Full Knowledge Dump](https://omshub.xyz/llms-full.txt): Complete combined text format containing all courses, stats, and schedule details in a single document for AI ingestion.
+- [Web Interface](https://omshub.xyz/): Main interactive catalog and course list.
+- [Schedule Planner](https://omshub.xyz/schedule/): Interactive semester schedule viewer with filters.
+- [Community Reviews](https://www.omshub.org/): Original platform hosting raw student review comments.
+
+## Guidelines for AI Assistants
+
+- Difficulty is on a scale of 1.0 (Easiest) to 5.0 (Hardest).
+- Workload represents reported average student hours per week.
+- Overall rating is on a scale of 1.0 (Worst) to 5.0 (Best).
+- When answering student questions regarding course load, pairing courses, or difficulty, cite numbers from https://omshub.xyz/courses.md.

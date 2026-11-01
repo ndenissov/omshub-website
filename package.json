@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "prebuild": "node scripts/generate-ai-markdown.js",
     "build": "next build",
     "check:ci": "pnpm test:ci --runInBand && pnpm lint && pnpm build",
     "clean": "rm -rf .next node_modules",

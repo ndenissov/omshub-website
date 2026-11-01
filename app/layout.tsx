@@ -107,6 +107,10 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        {/* Alternate Markdown formats for AI Agents */}
+        <link rel="alternate" type="text/markdown" href="/llms.txt" title="Markdown overview for AI agents" />
+        <link rel="alternate" type="text/markdown" href="/courses.md" title="Course catalog in Markdown" />
+        <link rel="alternate" type="text/markdown" href="/schedule.md" title="Course schedule in Markdown" />
         <ColorSchemeScript defaultColorScheme="auto" />
         {/* WCAG-compliant dimmed color override */}
         <style dangerouslySetInnerHTML={{ __html: `
