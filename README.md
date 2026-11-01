@@ -1,19 +1,14 @@
 # OMSHub
 
 [![license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-![contributors count](https://img.shields.io/github/contributors/omshub/website)
-![pull requests closed](https://img.shields.io/github/issues-pr-closed/omshub/website)
+[![Website](https://img.shields.io/badge/website-omshub.xyz-blue)](https://omshub.xyz)
 
-A website for Online Master's of Science (OMS) course reviews at Georgia Tech.
+A website for Online Master's of Science (OMS) course reviews and schedules at Georgia Tech.
 
 ## Resources
 
-[Contact our team!](mailto:gt.omshub@gmail.com)
-
-### OMSHub
-
-- Production - https://omshub.org
-- Storybook - https://storybook.omshub.org
+- Live Fork - https://omshub.xyz
+- Upstream Website - https://omshub.org
 
 ### OMS program home pages
 

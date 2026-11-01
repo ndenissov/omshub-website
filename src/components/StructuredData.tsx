@@ -64,6 +64,11 @@ export function CourseSchema({ course, reviews = [] }: CourseSchemaProps) {
   );
 }
 
+const SITE_URL =
+  process.env.SITE_URL ||
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  'https://omshub.xyz';
+
 // Organization schema for the website
 export function OrganizationSchema() {
   const schema = {
@@ -71,8 +76,8 @@ export function OrganizationSchema() {
     '@type': 'Organization',
     name: 'OMSHub',
     description: 'Community-driven course reviews for Georgia Tech Online Master\'s programs (OMSCS, OMSA, OMSCyber)',
-    url: 'https://omshub.org',
-    logo: 'https://omshub.org/logo.png',
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo.png`,
     sameAs: [
       SOCIAL_LINKS.github,
       SOCIAL_LINKS.discord,
@@ -97,13 +102,13 @@ export function WebsiteSchema() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'OMSHub',
-    url: 'https://omshub.org',
+    url: SITE_URL,
     description: 'Georgia Tech OMS Course Reviews - Community-driven ratings and reviews',
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: 'https://omshub.org/?search={search_term_string}',
+        urlTemplate: `${SITE_URL}/?search={search_term_string}`,
       },
       'query-input': 'required name=search_term_string',
     },

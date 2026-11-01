@@ -4,7 +4,7 @@ module.exports = {
   reactStrictMode: true,
   output: 'export',
   trailingSlash: true,
-  basePath: process.env.BASE_PATH !== undefined ? process.env.BASE_PATH : '/omshub-website',
+  basePath: process.env.BASE_PATH !== undefined ? process.env.BASE_PATH : '',
 
   // Disable source maps in production for better performance
   productionBrowserSourceMaps: false,

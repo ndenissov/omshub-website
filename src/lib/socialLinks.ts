@@ -2,7 +2,7 @@
 // Update these URLs in one place to change them across the entire website
 
 export const SOCIAL_LINKS = {
-  github: 'https://github.com/omshub',
+  github: 'https://github.com/ndenissov/omshub-website',
   discord: 'https://discord.gg/THnDwJAJ53',
   reddit: 'https://reddit.com/r/OMSCS',
   slack: 'https://omscs-study.slack.com',

@@ -39,6 +39,10 @@ jobs:
 
       - name: Build static site
         run: pnpm build
+        env:
+          SITE_URL: https://omshub.xyz
+          BASE_PATH: ''
+          GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION || secrets.GOOGLE_SITE_VERIFICATION }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

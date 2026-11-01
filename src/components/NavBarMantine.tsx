@@ -216,7 +216,7 @@ export function NavBarMantine() {
                 <Menu.Item
                   leftSection={<IconExternalLink size={16} />}
                   component="a"
-                  href="https://github.com/omshub/website/"
+                  href="https://github.com/ndenissov/omshub-website"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -227,7 +227,7 @@ export function NavBarMantine() {
                 <Menu.Item
                   leftSection={<IconBug size={16} />}
                   component="a"
-                  href="https://github.com/omshub/website/issues/new?template=bug_report.yml"
+                  href="https://github.com/ndenissov/omshub-website/issues/new?template=bug_report.yml"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -236,7 +236,7 @@ export function NavBarMantine() {
                 <Menu.Item
                   leftSection={<IconSparkles size={16} />}
                   component="a"
-                  href="https://github.com/omshub/website/issues/new?template=feature_request.yml"
+                  href="https://github.com/ndenissov/omshub-website/issues/new?template=feature_request.yml"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -245,7 +245,7 @@ export function NavBarMantine() {
                 <Menu.Item
                   leftSection={<IconTable size={16} />}
                   component="a"
-                  href="https://github.com/omshub/website/issues/new?template=course_data.yml"
+                  href="https://github.com/ndenissov/omshub-website/issues/new?template=course_data.yml"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -254,7 +254,7 @@ export function NavBarMantine() {
                 <Menu.Item
                   leftSection={<IconFlag size={16} />}
                   component="a"
-                  href="https://github.com/omshub/website/issues/new?template=flag_review.yml"
+                  href="https://github.com/ndenissov/omshub-website/issues/new?template=flag_review.yml"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -520,7 +520,7 @@ export function NavBarMantine() {
               variant="subtle"
               color="gray"
               component="a"
-              href="https://github.com/omshub/website/"
+              href="https://github.com/ndenissov/omshub-website"
               target="_blank"
               rel="noopener noreferrer"
               fullWidth
@@ -534,7 +534,7 @@ export function NavBarMantine() {
               variant="subtle"
               color="gray"
               component="a"
-              href="https://github.com/omshub/website/issues/new?template=bug_report.yml"
+              href="https://github.com/ndenissov/omshub-website/issues/new?template=bug_report.yml"
               target="_blank"
               rel="noopener noreferrer"
               fullWidth
@@ -548,7 +548,7 @@ export function NavBarMantine() {
               variant="subtle"
               color="gray"
               component="a"
-              href="https://github.com/omshub/website/issues/new?template=feature_request.yml"
+              href="https://github.com/ndenissov/omshub-website/issues/new?template=feature_request.yml"
               target="_blank"
               rel="noopener noreferrer"
               fullWidth
@@ -562,7 +562,7 @@ export function NavBarMantine() {
               variant="subtle"
               color="gray"
               component="a"
-              href="https://github.com/omshub/website/issues/new?template=course_data.yml"
+              href="https://github.com/ndenissov/omshub-website/issues/new?template=course_data.yml"
               target="_blank"
               rel="noopener noreferrer"
               fullWidth
@@ -576,7 +576,7 @@ export function NavBarMantine() {
               variant="subtle"
               color="gray"
               component="a"
-              href="https://github.com/omshub/website/issues/new?template=flag_review.yml"
+              href="https://github.com/ndenissov/omshub-website/issues/new?template=flag_review.yml"
               target="_blank"
               rel="noopener noreferrer"
               fullWidth

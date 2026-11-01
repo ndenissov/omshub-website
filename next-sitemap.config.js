@@ -1,13 +1,17 @@
 /** @type {import('next-sitemap').IConfig} */
 
+const defaultSiteUrl = 'https://omshub.xyz';
+const siteUrl = process.env.SITE_URL || defaultSiteUrl;
+
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://omshub.org',
+  siteUrl,
+  outDir: 'out',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   changefreq: 'daily',
   priority: 0.7,
   sitemapSize: 5000,
-  exclude: ['/api/*', '/user/*'],
+  exclude: ['/api/*', '/user/*', '/opengraph-image*', '/_not-found*'],
   robotsTxtOptions: {
     policies: [
       {
@@ -23,17 +27,18 @@ module.exports = {
     ],
   },
   transform: async (config, path) => {
-    // Higher priority for individual course pages
-    if (path.startsWith('/course/') && path !== '/course') {
+    // Course catalog page - high priority
+    if (path === '/course' || path === '/course/') {
       return {
         loc: path,
-        changefreq: 'weekly',
+        changefreq: 'daily',
         priority: 0.9,
+        lastmod: new Date().toISOString(),
       };
     }
 
-    // Course catalog page - high priority
-    if (path === '/course') {
+    // Schedule page - high priority
+    if (path === '/schedule' || path === '/schedule/') {
       return {
         loc: path,
         changefreq: 'daily',
@@ -43,7 +48,7 @@ module.exports = {
     }
 
     // Home page highest priority
-    if (path === '/') {
+    if (path === '/' || path === '') {
       return {
         loc: path,
         changefreq: 'daily',
@@ -59,27 +64,5 @@ module.exports = {
       priority: config.priority,
       lastmod: new Date().toISOString(),
     };
-  },
-  additionalPaths: async (_config) => {
-    // Fetch courses from the data repo and add them to sitemap
-    const result = [];
-    try {
-      const response = await fetch(
-        'https://raw.githubusercontent.com/omshub/data/main/static/courses.json'
-      );
-      const courses = await response.json();
-
-      for (const courseId of Object.keys(courses)) {
-        result.push({
-          loc: `/course/${courseId}`,
-          changefreq: 'weekly',
-          priority: 0.9,
-        });
-      }
-    } catch (error) {
-      console.error('Failed to fetch courses for sitemap:', error);
-    }
-
-    return result;
   },
 };

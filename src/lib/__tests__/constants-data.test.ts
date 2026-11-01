@@ -25,7 +25,7 @@ import { CSS_STAT_COLORS, GT_COLORS } from '../theme';
 describe('static constants', () => {
   it('exports social links used across the app', () => {
     expect(SOCIAL_LINKS).toMatchObject({
-      github: 'https://github.com/omshub',
+      github: 'https://github.com/ndenissov/omshub-website',
       discord: expect.stringContaining('discord.gg'),
       reddit: expect.stringContaining('OMSCS'),
       slack: expect.stringContaining('slack.com'),

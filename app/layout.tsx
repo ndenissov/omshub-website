@@ -14,8 +14,13 @@ import '@mantine/notifications/styles.css';
 import '@mantine/spotlight/styles.css';
 import './globals.css';
 
+const siteUrl =
+  process.env.SITE_URL ||
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  'https://omshub.xyz';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://omshub.org'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'OMSHub - Georgia Tech OMS Course Reviews',
     template: '%s | OMSHub',
@@ -49,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://omshub.org',
+    url: siteUrl,
     siteName: 'OMSHub',
     title: 'OMSHub - Georgia Tech OMS Course Reviews',
     description:
@@ -76,7 +81,7 @@ export const metadata: Metadata = {
     google: process.env.GOOGLE_SITE_VERIFICATION,
   },
   alternates: {
-    canonical: 'https://omshub.org',
+    canonical: siteUrl,
   },
 };
 
